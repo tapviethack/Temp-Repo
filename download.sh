@@ -1,6 +1,6 @@
 #!/bin/bash
 LINKS=(
-    "https://gofile.io/d/abc123"
+    "https://gofile.io/d/2fw6NS"
 )
 
 cd "/sdcard/Download" || { echo "[!] Không thể truy cập thư mục Download"; exit 1; }
