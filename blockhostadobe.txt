@@ -1,0 +1,33 @@
+@echo off
+echo.
+echo =======================================
+echo  Chặn kết nối máy chủ Adobe...
+echo =======================================
+echo.
+
+REM Mở quyền chỉnh sửa file hosts
+attrib -r -s -h "%windir%\System32\drivers\etc\hosts"
+
+REM Thêm host Adobe nếu chưa có
+findstr /C:"activate.adobe.com" "%windir%\System32\drivers\etc\hosts" >nul
+if %errorlevel%==0 (
+    echo Da chan Adobe truoc do.
+) else (
+    (
+        echo 127.0.0.1 activate.adobe.com
+        echo 127.0.0.1 practivate.adobe.com
+        echo 127.0.0.1 lm.licenses.adobe.com
+        echo 127.0.0.1 na1r.services.adobe.com
+        echo 127.0.0.1 hlrcv.stage.adobe.com
+        echo 127.0.0.1 genuine.adobe.com
+        echo 127.0.0.1 ic.adobe.io
+        echo 127.0.0.1 assets.adobedtm.com
+        echo 127.0.0.1 cc-api-data.adobe.io
+        echo 127.0.0.1 adobe.io
+        echo 127.0.0.1 prod.adobegenuine.com
+        echo 127.0.0.1 adobeid-na1.services.adobe.com
+    ) >> "%windir%\System32\drivers\etc\hosts"
+    echo Da chan ket noi Adobe thanh cong.
+)
+
+pause
